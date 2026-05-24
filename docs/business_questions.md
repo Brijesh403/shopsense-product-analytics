@@ -24,6 +24,7 @@
 
 **7. Which cohort retains users best?**
 > October 2019 — 18.49% Month 1 retention (2x platform average)
+
 > November 2019 had peak acquisition with 26,761 new buyers
 
 ---
