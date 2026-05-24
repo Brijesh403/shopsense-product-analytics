@@ -69,12 +69,17 @@ shopsense-product-analytics/
 - **Size:** ~20 million rows across 5 months
 - **Events:** `view` → `cart` → `remove_from_cart` → `purchase`
 
-## 🚧 Project Status
 
+## 🚧 Project Status
 | Phase | Status |
 |-------|--------|
 | Setup & Structure | ✅ Complete |
-| Database Schema | 🔄 In Progress |
-| SQL Analysis | ⏳ Upcoming |
+| Database Schema | ✅ Complete |
+| Data Loading (20.7M rows) | ✅ Complete |
+| Data Cleaning & Profiling | 🔄 In Progress |
+| SQL Funnel Analysis | ⏳ Upcoming |
+| SQL Retention & Cohort Analysis | ⏳ Upcoming |
+| SQL Revenue & KPI Queries | ⏳ Upcoming |
 | Python EDA | ⏳ Upcoming |
 | Power BI Dashboard | ⏳ Upcoming |
+| GitHub + LinkedIn Post | ⏳ Upcoming |
