@@ -78,7 +78,7 @@ shopsense-product-analytics/
 | Data Loading (20.7M rows) | ✅ Complete |
 | Data Cleaning & Profiling | ✅ Complete |
 | SQL Funnel Analysis | ✅ Complete |
-| SQL Retention & Cohort Analysis | ⏳ Upcoming |
+| SQL Retention & Cohort Analysis | ✅ Complete |
 | SQL Revenue & KPI Queries | ⏳ Upcoming |
 | Python EDA | ⏳ Upcoming |
 | Power BI Dashboard | ⏳ Upcoming |
