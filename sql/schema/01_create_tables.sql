@@ -28,3 +28,12 @@ CREATE TABLE IF NOT EXISTS raw_events (
     user_id       BIGINT,
     user_session  VARCHAR(36)
 );
+
+-- ============================================
+-- Indexes for query performance
+-- Created after data load
+-- ============================================
+
+CREATE INDEX idx_event_type ON raw_events(event_type);
+CREATE INDEX idx_user_id    ON raw_events(user_id);
+CREATE INDEX idx_event_time ON raw_events(event_time);
