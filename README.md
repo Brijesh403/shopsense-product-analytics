@@ -79,7 +79,7 @@ shopsense-product-analytics/
 | Data Cleaning & Profiling | ✅ Complete |
 | SQL Funnel Analysis | ✅ Complete |
 | SQL Retention & Cohort Analysis | ✅ Complete |
-| SQL Revenue & KPI Queries | ⏳ Upcoming |
+| SQL Revenue & KPI Queries | ✅ Complete |
 | Python EDA | ⏳ Upcoming |
 | Power BI Dashboard | ⏳ Upcoming |
 | GitHub + LinkedIn Post | ⏳ Upcoming |
