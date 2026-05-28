@@ -69,6 +69,25 @@ shopsense-product-analytics/
 - **Size:** ~20 million rows across 5 months
 - **Events:** `view` → `cart` → `remove_from_cart` → `purchase`
 
+## 📸 Key Visualizations
+
+### Monthly Revenue Trend
+![Revenue](dashboards/screenshots/01_monthly_revenue.png)
+
+### Conversion Funnel
+![Funnel](dashboards/screenshots/02_funnel_chart.png)
+
+### Cohort Retention Heatmap
+![Cohort](dashboards/screenshots/03_cohort_heatmap.png)
+
+### User Segmentation
+![Segments](dashboards/screenshots/04_user_segments.png)
+
+### Hourly Conversion Rate
+![Hourly](dashboards/screenshots/05_hourly_conversion.png)
+
+### Top Brands by Revenue
+![Brands](dashboards/screenshots/06_top_brands.png)
 
 ## 🚧 Project Status
 | Phase | Status |
@@ -80,6 +99,6 @@ shopsense-product-analytics/
 | SQL Funnel Analysis | ✅ Complete |
 | SQL Retention & Cohort Analysis | ✅ Complete |
 | SQL Revenue & KPI Queries | ✅ Complete |
-| Python EDA | ⏳ Upcoming |
+| Python EDA | ✅ Complete |
 | Power BI Dashboard | ⏳ Upcoming |
 | GitHub + LinkedIn Post | ⏳ Upcoming |
