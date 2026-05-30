@@ -7,10 +7,11 @@
 
 ## 📌 Business Context
 
-ShopSense is a D2C e-commerce app serving Indian consumers.
-As a Product Analyst, I was tasked with investigating why users
-drop off between signup and first purchase, and why retention
-is low after the first order.
+ShopSense is a D2C cosmetics e-commerce store — a portfolio case built on a
+**public GA4-style ecommerce events dataset (~20.7M rows)**. As a Product Analyst,
+I investigated why users drop off between **product view and first purchase**, and
+why retention is low after the first order. *(All revenue figures are in USD, as
+per the source dataset.)*
 
 ## ❓ Business Questions Answered
 
@@ -20,6 +21,26 @@ is low after the first order.
 4. What is the Monthly Active User (MAU) trend over 5 months?
 5. What is the Average Revenue Per User (ARPU)?
 6. Which product categories drive the most conversions?
+
+## 🔑 Key Findings (TL;DR)
+
+> Full write-up in [`reports/executive_summary.md`](reports/executive_summary.md).
+
+- **The funnel leaks at the top, not at checkout.** Only **24.9%** of viewers add to cart and just **6.9%** ever purchase — the biggest loss is awareness→intent.
+- **Cart abandonment is the #1 revenue leak.** **72.5%** of users who add to cart never buy.
+- **Retention is acquisition-dependent.** The Oct-2019 cohort retained at **18.5%** in Month 1 — nearly 2× every later cohort, pointing to a one-off acquisition spike and no durable retention engine.
+- **Revenue is promotion-driven and volatile.** Month-over-month swing from **+26%** (Nov) to **−29.6%** (Dec).
+- **Value is highly concentrated.** **14,139 "Champion" users (13% of buyers)** average **$215** each, while **59% of buyers are "At Risk."**
+- **Best conversion window is 9 AM–1 PM** (~6% vs ~3.5% overnight) — a free lever for promo timing.
+
+**Scale:** 20.7M events · 1.6M users · 110,518 buyers · $6.35M revenue · ARPU $57.47.
+
+| Recommendation | Expected Impact |
+|----------------|-----------------|
+| Cart-abandonment retargeting within 2 hrs | Recover the largest near-term revenue pool |
+| Win-back campaign for 65K At-Risk users | Protect existing revenue base |
+| Investigate December revenue drop | Fix seasonality / campaign gap |
+| Schedule promos for the 9 AM–1 PM peak | Lift conversion at zero cost |
 
 ## 🛠️ Tools & Technologies
 
@@ -70,9 +91,10 @@ shopsense-product-analytics/
 
 ## 📈 Dataset
 
-- **Source:** GA4-style ecommerce behavioral event data
-- **Size:** ~20 million rows across 5 months
+- **Source:** Public GA4-style ecommerce behavioral events (cosmetics retailer), framed here as the "ShopSense" D2C case
+- **Size:** ~20.7 million events across 5 months (Oct 2019 – Feb 2020)
 - **Events:** `view` → `cart` → `remove_from_cart` → `purchase`
+- **Currency:** USD (as per source data)
 
 ## 📸 Key Visualizations
 
