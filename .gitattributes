@@ -1,3 +1,4 @@
+# Language stats: count SQL, exclude notebooks and data files
 *.ipynb linguist-vendored
 *.sql linguist-detectable=true
 *.csv linguist-vendored
