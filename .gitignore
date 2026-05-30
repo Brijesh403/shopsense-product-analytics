@@ -1,3 +1,5 @@
+# Files and folders excluded from version control
+
 # Raw data files
 data/raw/
 data/cleaned/
