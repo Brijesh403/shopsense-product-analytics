@@ -1,4 +1,9 @@
 # 🛍️ ShopSense Product Analytics
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+![SQL](https://img.shields.io/badge/SQL-MySQL-blue)
+![Python](https://img.shields.io/badge/Python-3.11-yellow)
+![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-orange)
+![Rows](https://img.shields.io/badge/Data-20.7M%20Rows-red)
 
 ## 📌 Business Context
 
@@ -90,6 +95,7 @@ shopsense-product-analytics/
 ![Brands](dashboards/screenshots/06_top_brands.png)
 
 ## 🚧 Project Status
+
 | Phase | Status |
 |-------|--------|
 | Setup & Structure | ✅ Complete |
@@ -100,5 +106,5 @@ shopsense-product-analytics/
 | SQL Retention & Cohort Analysis | ✅ Complete |
 | SQL Revenue & KPI Queries | ✅ Complete |
 | Python EDA | ✅ Complete |
-| Power BI Dashboard | ⏳ Upcoming |
-| GitHub + LinkedIn Post | ⏳ Upcoming |
+| Power BI Dashboard | ✅ Complete |
+| GitHub + LinkedIn Post | ✅ Complete |
