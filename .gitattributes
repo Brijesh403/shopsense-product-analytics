@@ -1,0 +1,4 @@
+*.ipynb linguist-vendored
+*.sql linguist-detectable=true
+*.csv linguist-vendored
+dashboards/* linguist-vendored
