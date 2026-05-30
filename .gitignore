@@ -1,6 +1,9 @@
-# Raw data files (too large for GitHub)
+# Raw data files
 data/raw/
 data/cleaned/
+
+# Power BI export CSVs (too large / not needed on GitHub)
+data/powerbi/
 
 # Python cache
 __pycache__/
