@@ -115,18 +115,6 @@ shopsense-product-analytics/
 
 ### Top Brands by Revenue
 ![Brands](dashboards/screenshots/06_top_brands.png)
+---
 
-## 🚧 Project Status
-
-| Phase | Status |
-|-------|--------|
-| Setup & Structure | ✅ Complete |
-| Database Schema | ✅ Complete |
-| Data Loading (20.7M rows) | ✅ Complete |
-| Data Cleaning & Profiling | ✅ Complete |
-| SQL Funnel Analysis | ✅ Complete |
-| SQL Retention & Cohort Analysis | ✅ Complete |
-| SQL Revenue & KPI Queries | ✅ Complete |
-| Python EDA | ✅ Complete |
-| Power BI Dashboard | ✅ Complete |
-| GitHub + LinkedIn Post | ✅ Complete |
+**Brijesh Vaghela** · [LinkedIn](https://www.linkedin.com/in/brijesh-vaghela) · [GitHub](https://github.com/Brijesh403)
