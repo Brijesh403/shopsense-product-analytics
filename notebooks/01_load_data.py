@@ -12,15 +12,20 @@ import time
 
 # ============================================
 # CONFIGURATION
-# Update password to your MySQL root password
+# Set DB_PASSWORD as an environment variable:
+#   Windows: $env:DB_PASSWORD = "your_password"
+#   Linux/Mac: export DB_PASSWORD="your_password"
 # ============================================
 
 DB_CONFIG = {
-    'host'    : '127.0.0.1',
-    'user'    : 'root',
-    'password': '1998',
-    'database': 'shopsense'
+    'host'    : os.getenv('DB_HOST', '127.0.0.1'),
+    'user'    : os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME', 'shopsense')
 }
+
+if not DB_CONFIG['password']:
+    raise ValueError("DB_PASSWORD environment variable is not set.")
 
 # ============================================
 # LIST OF CSV FILES TO LOAD
@@ -119,11 +124,4 @@ if __name__ == '__main__':
         rows = load_file(file)
         grand_total += rows
 
-    end_time = time.time()
-    duration = round((end_time - start_time) / 60, 2)
-
-    print(f"\n{'='*50}")
-    print(f"🎉 ALL FILES LOADED SUCCESSFULLY")
-    print(f"Total rows inserted : {grand_total:,}")
-    print(f"Time taken          : {duration} minutes")
-    print(f"{'='*50}")
+    e
