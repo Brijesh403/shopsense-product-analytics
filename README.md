@@ -42,6 +42,23 @@ per the source dataset.)*
 | Investigate December revenue drop | Fix seasonality / campaign gap |
 | Schedule promos for the 9 AM–1 PM peak | Lift conversion at zero cost |
 
+## 🧪 A/B Test (Simulated)
+
+> Full write-up in [`reports/ab_test_simulation.md`](reports/ab_test_simulation.md).
+
+Designed and analyzed a simulated A/B test for a cart-abandonment discount nudge,
+since the underlying dataset is observational (no real experiment exists).
+
+| Metric | Value |
+|---|---|
+| Baseline conversion | 27.52% |
+| Target (MDE +3pp) | 30.52% |
+| Required sample/group | 2,828 (398K available) |
+| Observed lift | +2.25pp (27.49% → 29.74%) |
+| Significance | p < 0.001 (Z = 15.72) |
+
+**Note:** Simulated on real abandoner data to demonstrate methodology — not causal proof.
+
 ## 🛠️ Tools & Technologies
 
 | Tool | Purpose |
