@@ -7,11 +7,29 @@
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
+import os
 
 np.random.seed(42)  # reproducible
 
+# ============================================
+# CONFIGURATION
+# Set DB_PASSWORD as an environment variable:
+#   Windows: $env:DB_PASSWORD = "your_password"
+#   Linux/Mac: export DB_PASSWORD="your_password"
+# ============================================
+
+DB_CONFIG = {
+    'host'    : os.getenv('DB_HOST', '127.0.0.1'),
+    'user'    : os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME', 'shopsense')
+}
+
+if not DB_CONFIG['password']:
+    raise ValueError("DB_PASSWORD environment variable is not set.")
+
 engine = create_engine(
-    'mysql+mysqlconnector://root:1998@127.0.0.1/shopsense?charset=utf8mb4'
+    f"mysql+mysqlconnector://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}/{DB_CONFIG['database']}?charset=utf8mb4"
 )
 
 # Pull real cart-abandoners with their actual purchase outcome

@@ -7,8 +7,25 @@ import pandas as pd
 from sqlalchemy import create_engine
 import os
 
+# ============================================
+# CONFIGURATION
+# Set DB_PASSWORD as an environment variable:
+#   Windows: $env:DB_PASSWORD = "your_password"
+#   Linux/Mac: export DB_PASSWORD="your_password"
+# ============================================
+
+DB_CONFIG = {
+    'host'    : os.getenv('DB_HOST', '127.0.0.1'),
+    'user'    : os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME', 'shopsense')
+}
+
+if not DB_CONFIG['password']:
+    raise ValueError("DB_PASSWORD environment variable is not set.")
+
 engine = create_engine(
-    'mysql+mysqlconnector://root:1998@127.0.0.1/shopsense?charset=utf8mb4'
+    f"mysql+mysqlconnector://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}/{DB_CONFIG['database']}?charset=utf8mb4"
 )
 
 os.makedirs('data/powerbi', exist_ok=True)
