@@ -54,12 +54,21 @@ engine = create_engine(
 # FUNCTION TO CLEAN AND LOAD ONE FILE
 # ============================================
 
+def count_source_rows(filepath):
+    """Count data rows in the source CSV (excludes header).
+    Used to validate the load didn't silently drop rows."""
+    with open(filepath, 'rb') as f:
+        return sum(1 for _ in f) - 1
+
+
 def load_file(filename):
 
     filepath = os.path.join(RAW_DATA_PATH, filename)
     print(f"\n{'='*50}")
     print(f"Loading: {filename}")
     print(f"{'='*50}")
+
+    expected_rows = count_source_rows(filepath)
 
     # Read CSV in chunks of 100,000 rows
     # This prevents RAM overload on large files
@@ -106,7 +115,20 @@ def load_file(filename):
         total_rows += len(chunk)
         print(f"  Chunk {chunk_number} loaded — {total_rows:,} rows so far")
 
-    print(f"\n✅ {filename} complete — {total_rows:,} total rows loaded")
+    # ----------------------------------------
+    # VALIDATE: loaded row count must match the
+    # source file's data row count. A mismatch here
+    # means rows were silently dropped mid-load
+    # (e.g. a malformed row breaking a chunk boundary).
+    # ----------------------------------------
+    assert total_rows == expected_rows, (
+        f"Row count mismatch in {filename}: "
+        f"loaded {total_rows:,}, source has {expected_rows:,}. "
+        f"Stopping — investigate before trusting downstream analysis."
+    )
+
+    print(f"\n✅ {filename} complete — {total_rows:,} total rows loaded "
+          f"(validated against {expected_rows:,} source rows)")
     return total_rows
 
 
@@ -132,3 +154,16 @@ if __name__ == '__main__':
     print(f"Total rows inserted : {grand_total:,}")
     print(f"Time taken          : {duration} minutes")
     print(f"{'='*50}")
+
+    # Sanity check against the documented dataset scale (~20.7M rows).
+    # A soft warning, not a hard failure — the exact count can vary by
+    # a few rows depending on the Kaggle download, but a large gap
+    # means something is wrong with the source files or the load.
+    EXPECTED_APPROX = 20_692_840
+    pct_diff = abs(grand_total - EXPECTED_APPROX) / EXPECTED_APPROX * 100
+    if pct_diff > 1:
+        print(f"⚠️  WARNING: loaded {grand_total:,} rows, expected "
+              f"~{EXPECTED_APPROX:,} (±1%). Off by {pct_diff:.1f}% — "
+              f"verify the source CSVs before trusting downstream analysis.")
+    else:
+        print(f"✅ Row count within expected range of ~{EXPECTED_APPROX:,}")
