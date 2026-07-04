@@ -83,6 +83,39 @@ since the underlying dataset is observational (no real experiment exists).
 
 ![A/B Test Results](dashboards/screenshots/11_ab_test_results.png)
 
+## 📐 Statistical Rigor — Beyond the A/B Test
+
+Two follow-up analyses that test whether the descriptive findings above
+hold up statistically, not just visually.
+
+**Funnel drop-off significance** — full write-up in
+[`reports/funnel_significance.md`](reports/funnel_significance.md).
+Every funnel stage (view-to-cart, cart-to-purchase, overall conversion)
+varies significantly by month (chi-square, p < 0.001 on all three) — the
+month-to-month swings are real, not noise. At this sample size
+(350K+ viewers/month) that's close to guaranteed, so the report leads
+with the caveat: statistical significance isn't the interesting
+question here, effect size is.
+
+**Segment-level cart abandonment — Champions vs. At-Risk** — full
+write-up in [`reports/segment_lift_analysis.md`](reports/segment_lift_analysis.md).
+
+| Segment | Abandonment Rate | Total Carts |
+|---|---|---|
+| Champion | 62.04% | 1,493,513 |
+| At Risk | 64.54% | 1,122,022 |
+| Loyal | 64.06% | 763,856 |
+
+Champion vs. At-Risk gap: **2.50pp, 95% CI [2.38pp, 2.62pp], p < 0.001**
+(real, measured data — not simulated). The counter-intuitive finding:
+your highest-value repeat buyers abandon carts at nearly the same rate
+as your least-engaged segment — past spend doesn't predict *this*
+cart's outcome. Segment isn't a strong lever on abandonment rate, but it
+is a strong lever on *volume*: Champions + At-Risk together hold ~1.65M
+of the ~2.18M total abandoned-cart instances, so a recovery campaign
+targeting just those two groups covers most of the addressable
+opportunity.
+
 ## 🧪 Experiment Ideas
 
 Beyond the cart-abandonment nudge already tested, here are three
@@ -183,6 +216,7 @@ shopsense-product-analytics/
 │   └── kpis/               ← KPI metric queries
 │
 ├── notebooks/              ← Python EDA + A/B test scripts
+│   └── statistical_tests/  ← Funnel + segment significance testing
 │
 ├── dashboards/
 │   └── screenshots/        ← Power BI dashboard + chart exports

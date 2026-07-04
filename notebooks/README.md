@@ -13,6 +13,7 @@ A/B test analysis.
 | `04_ab_test_power.py` | Sample-size / power analysis for the simulated cart-abandonment A/B test |
 | `05_ab_test_simulation.py` | Random group assignment + simulated treatment effect on real abandoner data |
 | `06_ab_test_significance.py` | Two-proportion Z-test on the simulated results |
+| `statistical_tests/` | Significance testing on the funnel and RFM segments — see [its README](statistical_tests/README.md) |
 
 ## Stack
 Python 3.11 · pandas · SQLAlchemy · statsmodels · Matplotlib · Seaborn
