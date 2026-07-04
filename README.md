@@ -59,15 +59,34 @@ since the underlying dataset is observational (no real experiment exists).
 
 **Note:** Simulated on real abandoner data to demonstrate methodology — not causal proof.
 
+![A/B Test Results](dashboards/screenshots/11_ab_test_results.png)
+
 ## 🛠️ Tools & Technologies
 
 | Tool | Purpose |
 |------|---------|
 | MySQL 8.0 | Data storage and SQL analysis |
-| Python 3.11 | Data cleaning and EDA |
+| Python 3.11 | Data cleaning, EDA, A/B test analysis |
 | Pandas / Seaborn / Matplotlib | Analysis and visualization |
+| statsmodels | Power analysis and significance testing |
 | Power BI | Executive dashboard |
 | Git + GitHub | Version control and portfolio |
+
+## ▶️ How to Run
+
+1. Create a MySQL 8.0 database named `shopsense` and set your credentials as
+   environment variables (never hardcode them):
+   ```
+   export DB_HOST=127.0.0.1
+   export DB_USER=root
+   export DB_PASSWORD=your_password
+   export DB_NAME=shopsense
+   ```
+2. Install dependencies: `pip install -r requirements.txt`
+3. Download the raw CSVs into `data/raw/` (see [`data/README.md`](data/README.md) for source)
+4. Run the schema + analysis SQL in `sql/` (in numbered order), then the
+   notebooks in `notebooks/` (in numbered order) to load data, explore, export
+   for Power BI, and reproduce the A/B test.
 
 ## 📁 Project Structure
 
@@ -83,16 +102,19 @@ shopsense-product-analytics/
 │   ├── analysis/           ← Funnel, retention, cohort queries
 │   └── kpis/               ← KPI metric queries
 │
-├── notebooks/              ← Python EDA notebooks
+├── notebooks/              ← Python EDA + A/B test scripts
 │
 ├── dashboards/
-│   └── screenshots/        ← Power BI dashboard exports
+│   └── screenshots/        ← Power BI dashboard + chart exports
 │
 ├── reports/                ← Final summary reports
 │
-└── docs/
-    ├── kpi_definitions.md  ← All KPI definitions
-    └── business_questions.md ← Business questions tracker
+├── docs/
+│   ├── kpi_definitions.md  ← All KPI definitions
+│   └── business_questions.md ← Business questions tracker
+│
+├── requirements.txt        ← Python dependencies
+└── LICENSE                 ← MIT License
 ```
 
 ## 📊 Key KPIs Tracked
