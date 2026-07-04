@@ -69,6 +69,10 @@ All definitions follow industry-standard product analytics practices.
 | KPI | Value Found |
 |-----|------------|
 | Total Users | 1,639,358 |
+| Average DAU | ~18,453/day (range 7,430–33,859) |
+| Average WAU | ~104,800/week |
+| MAU by month | Oct 399,664 · Nov 368,232 · Dec 370,154 · Jan 410,073 · Feb 391,055 |
+| DAU/MAU Ratio (stickiness) | ~4.8% |
 | Total Sessions | 4,535,941 |
 | Sessions per User | 2.77 |
 | Overall Conversion Rate | 6.92% |
@@ -77,7 +81,12 @@ All definitions follow industry-standard product analytics practices.
 | Cart Abandonment Rate | 72.48% |
 | Peak Conversion Hour | 11 AM (6.04%) |
 | Best Converting Brand | eunyul (51.32%) |
-| Data Coverage | 151 days (Oct 2019 — Feb 2020) |
+| Data Coverage | 152 days (Oct 2019 — Feb 2020) |
+
+> DAU/MAU stickiness of ~4.8% is low relative to consumer app benchmarks
+> (typically 10-20%+), consistent with the Day 1 retention finding below
+> (1.12%) — most users show up once and don't return, rather than
+> returning daily or weekly.
 
 ---
 

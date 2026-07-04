@@ -34,6 +34,21 @@ All questions below were answered using SQL analysis on 20.7M+ behavioral events
 
 ---
 
+## ✅ Engagement
+
+**11. What is the Monthly Active User (MAU) trend over 5 months?**
+> MAU ranged 368K–410K with no clear growth trend: Oct 399,664 → Nov
+> 368,232 → Dec 370,154 → Jan 410,073 → Feb 391,055. The dip in Nov/Dec
+> lines up with the same seasonality flagged in the revenue trend below.
+
+**12. How sticky is the platform (DAU/MAU)?**
+> ~4.8% — average DAU (~18,453) over average MAU (~387,835). Low
+> relative to typical consumer-app benchmarks (10-20%+), consistent
+> with the Day 1 retention finding (1.12%): most users show up once
+> rather than forming a daily/weekly habit.
+
+---
+
 ## ✅ Revenue & Value
 
 **8. What is ARPU by cohort?**
