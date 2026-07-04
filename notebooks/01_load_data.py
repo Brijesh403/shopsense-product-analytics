@@ -124,4 +124,11 @@ if __name__ == '__main__':
         rows = load_file(file)
         grand_total += rows
 
-    e
+    end_time = time.time()
+    duration = round((end_time - start_time) / 60, 2)
+
+    print(f"\n{'='*50}")
+    print(f"🎉 ALL FILES LOADED SUCCESSFULLY")
+    print(f"Total rows inserted : {grand_total:,}")
+    print(f"Time taken          : {duration} minutes")
+    print(f"{'='*50}")
